@@ -1,0 +1,2 @@
+//output the current taken blocks of the disk
+int getTaken(int disk);
