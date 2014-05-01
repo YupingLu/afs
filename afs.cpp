@@ -141,6 +141,7 @@ int main()
 	char cmd_string[MAX_CMD_NUM + 1]; // command line
 	struct Cmd_Set command;		  // command struct
 	bool status;			  // check for invalid command line
+	int gfd;    //global current file descriptor
 
 	Dir_Inode current_block;
 
@@ -155,6 +156,7 @@ int main()
 
 	// Open the disk
 	fd = Initialize();
+	gfd = fd;
 
 	while (1) {
 
@@ -191,7 +193,7 @@ int main()
 			rmdir(current_block, command, current_dir, fd);
 		
 		else if (strcmp(command.cmd_name, "open") == 0) 
-			open(current_block, command, current_dir, fd);
+			open(current_block, command, current_dir, fd, gfd);
 		
 		else if (strcmp(command.cmd_name, "link") == 0) 
 			link(current_block, command, current_dir, fd);
@@ -200,7 +202,7 @@ int main()
 			unlink(current_block, command, current_dir, fd);
 
 		else if (strcmp(command.cmd_name, "write") == 0) 
-			write(current_block, command, fd);
+			write(current_block, command, fd, gfd);
 
 		else if (strcmp(command.cmd_name, "cat") == 0) 
 			cat(current_block, command, fd);

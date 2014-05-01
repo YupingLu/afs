@@ -29,7 +29,7 @@ void unlink(Dir_Inode current_block, Cmd_Set command, short current_dir, int fd)
 File_Inode GetInode(short block_id, int fd);
 
 //open
-void open(Dir_Inode current_block, Cmd_Set command, short current_dir, int fd);
+void open(Dir_Inode current_block, Cmd_Set command, short current_dir, int fd, int &gfd);
 File_Inode Create();
 
 //link
@@ -45,7 +45,7 @@ void cd(Dir_Inode current_block, Cmd_Set command, short current_dir, int fd);
 void rmdir(Dir_Inode current_block, Cmd_Set command, short current_dir, int fd);
 
 //write
-void write(Dir_Inode current_block, Cmd_Set command, int fd);
+void write(Dir_Inode current_block, Cmd_Set command, int fd, int &gfd);
 
 //ls
 void ls(Dir_Inode current_block, Cmd_Set command, int fd);

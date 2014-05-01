@@ -8,7 +8,7 @@ Class: CS560 */
 using namespace std;
 
 
-void open(Dir_Inode current_block, Cmd_Set command, short current_dir, int fd){
+void open(Dir_Inode current_block, Cmd_Set command, short current_dir, int fd, int &gfd){
 	File_Inode newFile;
 	bool there = false;
 	bool isSpace = false;
@@ -51,7 +51,8 @@ void open(Dir_Inode current_block, Cmd_Set command, short current_dir, int fd){
 		WriteDisk(fd, current_dir, (void *) &current_block);
 		WriteDisk(fd, tempAdd, (void *) &newFile);
 		WriteDisk(fd, newBlockNum, (void*)&tempDa);
-
+		
+		gfd = tempAdd; //save the current file descriptor for write operation
 		cout << "File " << command.file_name << " is now created. " << endl;
 		cout << "fd is " << tempAdd << endl;
 	}
