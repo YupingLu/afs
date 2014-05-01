@@ -229,7 +229,7 @@ bool PartitionCommand(char *cmd_string, struct Cmd_Set &command)
 	int numtokens = 0;		// number of tokens
 	const char *new_cmd;		// command string without leading spaces
 	char *temp_string;		// temporary string used by strtok
-	char *temp_token;
+	char *temp_cmd;
 	int temp;
 
 	// Remove spaces at beginning
@@ -262,8 +262,12 @@ bool PartitionCommand(char *cmd_string, struct Cmd_Set &command)
 	strcpy(temp_string, new_cmd);
 	command.cmd_name = strtok(temp_string, DELIM);
 	if (numtokens > 1) command.file_name = strtok(NULL, DELIM);
-	if (numtokens > 2) command.data = temp_string;//command.data = strtok(NULL, DELIM);
-	cout << command.data <<endl;
+	if (numtokens > 2) {
+		temp_cmd = cmd_string + strspn(cmd_string, DELIM) + strlen(command.cmd_name)
+		+ strlen(command.file_name) + 2*strlen(DELIM) - 4;
+		command.data = temp_cmd;
+		//printf ("%s\n",command.data);
+	}
 
 	// Check for invalid command lines
 	if (strcmp(command.cmd_name, "ls") == 0 ||

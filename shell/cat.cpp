@@ -21,7 +21,7 @@ void cat(Dir_Inode current_block, Cmd_Set command, int fd){
 			if(!IsDir(current_block.dir_entries[i].block_num, fd)){
 				file = true;
 				ReadDisk(fd, current_block.dir_entries[i].block_num, (void*)&tempFile);
-				cout << "The file " << command.file_name <<" holds: ";
+				cout << "The file " << command.file_name <<" holds: \n";
 				for(int j = 0; j < MAX_BLOCKS; j++)
 				{
 					if(tempFile.blocks[j] > 0)
