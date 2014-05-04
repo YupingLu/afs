@@ -185,8 +185,10 @@ int main()
 		else if (strcmp(command.cmd_name, "ls") == 0) 
 			ls(current_block, command, fd);
 		
-		else if (strcmp(command.cmd_name, "tree") == 0) 
-			tree(current_block, command, fd);
+		else if (strcmp(command.cmd_name, "tree") == 0) {
+			cout << "." <<endl; //current root
+			tree(current_block, command, fd, 0);
+		}
 		
 		else if (strcmp(command.cmd_name, "stat") == 0) 
 			stat(current_block, command, fd);

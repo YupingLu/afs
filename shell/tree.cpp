@@ -10,28 +10,30 @@ Class: CS560 */
 
 using namespace std;
 
-void tree(Dir_Inode current_block, Cmd_Set command, int fd){
+void tree(Dir_Inode current_block, Cmd_Set command, int fd, int count){
 	//File_Inode tempBlock1;
 	Dir_Inode temp_dir;
 	int numBlocks;
-	int count = 0;
+	char star = '-';
+	count++;	
+	
 	for(int i = 0; i < MAX_FILES; i++)
 	{
 		if(IsDir(current_block.dir_entries[i].block_num, fd) && current_block.dir_entries[i].block_num != 0)
 		{
-			cout << current_block.dir_entries[i].name << endl;
-			count++;
+			cout << string(count*3, star);
+			cout << current_block.dir_entries[i].name << " dir " << endl;
+			
 			ReadDisk(fd, current_block.dir_entries[i].block_num, (void *) &temp_dir);
-			tree(temp_dir, command, fd);
+			tree(temp_dir, command, fd, count);
 		}
 		else if(current_block.dir_entries[i].block_num != 0)
 		{
 			//ReadDisk(fd, current_block.dir_entries[i].block_num, (void *) &tempBlock1);
 			//numBlocks = ((tempBlock1.size/BLOCK_SIZE))+FILE_BLOCK;
-			cout << current_block.dir_entries[i].name << endl;
-			count++;
+			cout << string(count*3, star);
+			cout << current_block.dir_entries[i].name << " file " << endl;
 		}
 	}
-	if(count == 0)
-		cout << "Empty directory." <<endl;
+	
 }

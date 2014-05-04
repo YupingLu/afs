@@ -66,6 +66,6 @@ void stat(Dir_Inode current_block, Cmd_Set command, int fd);
 void cp(Dir_Inode current_block, Cmd_Set command, short current_dir, int fd);
 
 //tree
-void tree(Dir_Inode current_block, Cmd_Set command, int fd);
+void tree(Dir_Inode current_block, Cmd_Set command, int fd, int count);
 
 #endif
