@@ -26,7 +26,7 @@ void read(Cmd_Set command, int fd, int &gfd, int flag, int &offset){
 				cout<< "Offset is larger than file length." << endl;
 			}
 			else {
-				cout << "The file " << command.file_name <<" holds: \n";
+				cout << "The content is: " << endl;
 				
 				int end = offset + range;
 				int div1 = offset / BLOCK_SIZE;
