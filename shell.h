@@ -51,9 +51,12 @@ void write(Dir_Inode current_block, Cmd_Set command, int fd, int &gfd, int flag)
 void ls(Dir_Inode current_block, Cmd_Set command, int fd);
 
 //close
-void close(Cmd_Set command, int fd, int &gfd, int &flag);
+void close(Cmd_Set command, int fd, int &gfd, int &flag, int &offset);
 
 //read
-void read(Dir_Inode current_block, Cmd_Set command, int fd, int &gfd, int flag);
+void read(Cmd_Set command, int fd, int &gfd, int flag, int &offset);
+
+//seek
+void seek(Cmd_Set command, int fd, int &gfd, int flag, int &offset);
 
 #endif

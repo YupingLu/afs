@@ -33,6 +33,7 @@ import, export, exit.*/
 #include "shell/unlink.cpp"
 #include "shell/close.cpp"
 #include "shell/read.cpp"
+#include "shell/seek.cpp"
 
 using namespace std;
 
@@ -145,6 +146,7 @@ int main()
 	bool status;			  // check for invalid command line
 	int gfd;    //global current file descriptor
 	int flag;	//file flag, initial value is 0, 1: r, 2: w, 3: rw
+	int offset;		//file descriptor offset
 
 	Dir_Inode current_block;
 
@@ -161,6 +163,7 @@ int main()
 	fd = Initialize();
 	gfd = fd;
 	flag = 0;
+	offset = 0;
 
 	while (1) {
 
@@ -207,6 +210,12 @@ int main()
 
 		else if (strcmp(command.cmd_name, "write") == 0) 
 			write(current_block, command, fd, gfd, flag);
+			
+		else if (strcmp(command.cmd_name, "read") == 0)
+			read(command, fd, gfd, flag, offset);
+		
+		else if (strcmp(command.cmd_name, "seek") == 0)
+			seek(command, fd, gfd, flag, offset);
 
 		else if (strcmp(command.cmd_name, "cat") == 0) 
 			cat(current_block, command, fd);
@@ -223,7 +232,7 @@ int main()
 		}
 		
 		else if (strcmp(command.cmd_name, "close") == 0)
-			close(command, fd, gfd, flag);
+			close(command, fd, gfd, flag, offset);
 		
 		else {
 			cerr << "ERROR: Invalid command not detected by PartitionCommand" << endl;
@@ -314,7 +323,8 @@ bool PartitionCommand(char *cmd_string, struct Cmd_Set &command)
 	}
 	else if (strcmp(command.cmd_name, "open") == 0 ||
 		strcmp(command.cmd_name, "link") == 0 ||
-		strcmp(command.cmd_name, "read") == 0)
+		strcmp(command.cmd_name, "read") == 0 ||
+		strcmp(command.cmd_name, "seek") == 0)
 	{
 		if (numtokens != 3) {
 			cerr << "Invalid command line: " << command.cmd_name;

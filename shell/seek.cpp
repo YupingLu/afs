@@ -7,7 +7,7 @@ Class: CS560 */
 
 using namespace std;
 
-void read(Cmd_Set command, int fd, int &gfd, int flag, int &offset){
+void seek(Cmd_Set command, int fd, int &gfd, int flag, int &offset){
 	File_Inode tempFile;
 	int datasize;
 	
