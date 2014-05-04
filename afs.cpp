@@ -36,6 +36,7 @@ import, export, exit.*/
 #include "shell/seek.cpp"
 #include "shell/stat.cpp"
 #include "shell/cp.cpp"
+#include "shell/tree.cpp"
 
 using namespace std;
 
@@ -184,6 +185,9 @@ int main()
 		else if (strcmp(command.cmd_name, "ls") == 0) 
 			ls(current_block, command, fd);
 		
+		else if (strcmp(command.cmd_name, "tree") == 0) 
+			tree(current_block, command, fd);
+		
 		else if (strcmp(command.cmd_name, "stat") == 0) 
 			stat(current_block, command, fd);
 		
@@ -302,7 +306,8 @@ bool PartitionCommand(char *cmd_string, struct Cmd_Set &command)
 		strcmp(command.cmd_name, "home") == 0 ||
 		strcmp(command.cmd_name, "space") == 0 ||
 		strcmp(command.cmd_name, "mkfs") == 0 ||
-		strcmp(command.cmd_name, "exit") == 0)
+		strcmp(command.cmd_name, "exit") == 0 ||
+		strcmp(command.cmd_name, "tree") == 0)
 	{
 		if (numtokens != 1) {
 			cerr << "Invalid command line: " << command.cmd_name;
