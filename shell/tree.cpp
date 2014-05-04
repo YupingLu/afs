@@ -8,7 +8,7 @@ Class: CS560 */
 
 using namespace std;
 
-void ls(Dir_Inode current_block, Cmd_Set command, int fd){
+void tree(Dir_Inode current_block, Cmd_Set command, int fd){
 	cout << "Name  Block_Id   Type   Bytes  NumBlocks(Full Blocks)  LinkCount" << endl;
 	File_Inode tempBlock1;
 	int numBlocks;

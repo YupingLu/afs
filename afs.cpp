@@ -34,6 +34,8 @@ import, export, exit.*/
 #include "shell/close.cpp"
 #include "shell/read.cpp"
 #include "shell/seek.cpp"
+#include "shell/stat.cpp"
+#include "shell/cp.cpp"
 
 using namespace std;
 
@@ -182,6 +184,9 @@ int main()
 		else if (strcmp(command.cmd_name, "ls") == 0) 
 			ls(current_block, command, fd);
 		
+		else if (strcmp(command.cmd_name, "stat") == 0) 
+			stat(current_block, command, fd);
+		
 		else if (strcmp(command.cmd_name, "cd") == 0) 
 			cd(current_block, command, current_dir, fd);
 		
@@ -207,6 +212,9 @@ int main()
 		
 		else if (strcmp(command.cmd_name, "unlink") == 0) 
 			unlink(current_block, command, current_dir, fd);
+		
+		else if (strcmp(command.cmd_name, "cp") == 0) 
+			cp(current_block, command, current_dir, fd);
 
 		else if (strcmp(command.cmd_name, "write") == 0) 
 			write(current_block, command, fd, gfd, flag);
@@ -308,7 +316,8 @@ bool PartitionCommand(char *cmd_string, struct Cmd_Set &command)
 		strcmp(command.cmd_name, "cat") == 0 ||
 		strcmp(command.cmd_name, "rm") == 0 ||
 		strcmp(command.cmd_name, "unlink") == 0 ||
-		strcmp(command.cmd_name, "close") == 0)
+		strcmp(command.cmd_name, "close") == 0 ||
+		strcmp(command.cmd_name, "stat") == 0)
 	{
 		if (numtokens != 2) {
 			cerr << "Invalid command line: " << command.cmd_name;
@@ -324,7 +333,8 @@ bool PartitionCommand(char *cmd_string, struct Cmd_Set &command)
 	else if (strcmp(command.cmd_name, "open") == 0 ||
 		strcmp(command.cmd_name, "link") == 0 ||
 		strcmp(command.cmd_name, "read") == 0 ||
-		strcmp(command.cmd_name, "seek") == 0)
+		strcmp(command.cmd_name, "seek") == 0 ||
+		strcmp(command.cmd_name, "cp") == 0)
 	{
 		if (numtokens != 3) {
 			cerr << "Invalid command line: " << command.cmd_name;

@@ -3,7 +3,10 @@ Name: Yuping(Allan) Lu
 Class: CS560 */
 
 
-//read the content of the file with offset
+//Move the current file offset associated with <fd> to a new
+//file offset at <offset>. The <offset> means the number of
+//bytes from the beginning of the file.
+
 
 using namespace std;
 

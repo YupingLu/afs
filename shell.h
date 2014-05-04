@@ -59,4 +59,10 @@ void read(Cmd_Set command, int fd, int &gfd, int flag, int &offset);
 //seek
 void seek(Cmd_Set command, int fd, int &gfd, int flag, int &offset);
 
+//stat
+void stat(Dir_Inode current_block, Cmd_Set command, int fd);
+
+//cp
+void cp(Dir_Inode current_block, Cmd_Set command, short current_dir, int fd);
+
 #endif
