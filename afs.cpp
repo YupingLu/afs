@@ -153,17 +153,25 @@ int main()
 	int gfd;    //global current file descriptor
 	int flag;	//file flag, initial value is 0, 1: r, 2: w, 3: rw
 	int offset;		//file descriptor offset
+	FILE * pFile;
 
 	Dir_Inode current_block;
 
 	short current_dir = ROOT_DIR;		//set to root directory initially
 
-//#if 0
+#if 0
 	cout << "superblock size: " << sizeof(struct Bitmaps) << endl;
 	cout << "dirblock size: " << sizeof(struct Dir_Inode) << endl;
 	cout << "inode size: " <<  sizeof(struct File_Inode) << endl;
 	cout << "datablock size: " << sizeof(struct Data_Block) << endl;
-//#endif
+#endif
+
+	pFile = fopen ("samplescript.sh" , "r");
+   	if (pFile == NULL)
+   	{
+   		perror ("Error opening file");
+   		exit(-1);
+   	}
 
 	// Open the disk
 	fd = Initialize();
@@ -174,7 +182,7 @@ int main()
 	while (1) {
 
 		cout << START;
-		if (fgets(cmd_string, MAX_CMD_NUM, stdin) == NULL) continue;
+		if (fgets(cmd_string, MAX_CMD_NUM, pFile) == NULL) continue;
 
 		// Create the command structure, checking for invalid command lines
 		status = PartitionCommand(cmd_string, command);
@@ -261,7 +269,7 @@ int main()
 			cerr << "ERROR: Invalid command not detected by PartitionCommand" << endl;
 		}
 	}
-
+	fclose (pFile);
 	return 0;
 }
 
