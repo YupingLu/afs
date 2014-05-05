@@ -67,6 +67,7 @@ void cp(Dir_Inode current_block, Cmd_Set command, short current_dir, int fd){
 			destFile.size = sourceFile.size;
 			//memcpy(destFile.blocks, sourceFile.blocks, MAX_BLOCKS);
 			destFile.link_count = sourceFile.link_count;
+			time(&destFile.timer);
 		
 			WriteDisk(fd, current_dir, (void *) &current_block);
 			WriteDisk(fd, newBlockNum, (void *) &destFile);

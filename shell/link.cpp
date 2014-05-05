@@ -61,6 +61,7 @@ void link(Dir_Inode current_block, Cmd_Set command, short current_dir, int fd){
 			memcpy(destFile.blocks, sourceFile.blocks, MAX_BLOCKS);
 			destFile.link_count++;
 			sourceFile.link_count++;
+			time(&destFile.timer);
 			//destFile.link_count = &sourceFile.link_count;
 		
 			WriteDisk(fd, current_dir, (void *) &current_block);

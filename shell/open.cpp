@@ -58,6 +58,7 @@ void open(Dir_Inode current_block, Cmd_Set command, short current_dir, int fd, i
 			}*/
 			newBlockNum = AddNewBlock(fd);
 			newFile.blocks[0] = newBlockNum;
+			time(&newFile.timer);
 			strcpy(tempDa.data, empty);
 
 			WriteDisk(fd, current_dir, (void *) &current_block);
@@ -88,6 +89,7 @@ File_Inode Create(){
 	tempINode.magic = INODE_MAGIC_NUM;
 	tempINode.size = 0;
 	tempINode.link_count = 1;
+	tempINode.timer = 0;
 	for(int i = 0; i < MAX_BLOCKS; i++)
 		tempINode.blocks[i] = 0;
 

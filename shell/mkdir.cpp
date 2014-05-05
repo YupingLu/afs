@@ -80,6 +80,7 @@ void mkdir(Dir_Inode current_block, Cmd_Set command, int current_dir, int fd){
 			new_block = NewDir();
 			new_block_id = AddNewBlock(fd);
 			new_block.parent_id = current_dir;
+			time(&new_block.timer);
 			WriteDisk(fd, new_block_id, (void *) &new_block);
 
 			strcpy(current_block.dir_entries[current_block.num_entries].name, command.file_name);
@@ -135,9 +136,8 @@ void mkdir(Dir_Inode current_block, Cmd_Set command, int current_dir, int fd){
 			new_block = NewDir();
 			new_block_id = AddNewBlock(fd);
 			new_block.parent_id = current_dir;
+			time(&new_block.timer);
 			WriteDisk(fd, new_block_id, (void *) &new_block);
-			
-			
 			
 			strcpy(sub_block.dir_entries[sub_block.num_entries].name, dir2);
 			sub_block.dir_entries[sub_block.num_entries].block_num = new_block_id;

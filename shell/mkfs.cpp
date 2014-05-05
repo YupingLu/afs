@@ -35,6 +35,7 @@ int mkfs()
 	dir_block.magic = DIR_MAGIC_NUM;
 	dir_block.num_entries = 0;
 	dir_block.parent_id = 1;   // root dir  is block 1
+	dir_block.timer = 0;
 	for (i = 0; i < MAX_FILES; i++) {
 		dir_block.dir_entries[i].block_num = 0;
 	}
