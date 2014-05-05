@@ -16,8 +16,8 @@ const char *VIRTUAL_DISK = "virtual_disk";
 const unsigned int DIR_MAGIC_NUM = 0xFFFFFFFF;
 const unsigned int INODE_MAGIC_NUM = 0xFFFFFFFE;
 const int MAX_CMD_NUM = 500;
-const int MAX_FNAME_SIZE = 202; //144;
-const int MAX_BLOCKS = ((BLOCK_SIZE - 8) / 2) - 1;
+const int MAX_FNAME_SIZE = 200; //144;
+const int MAX_BLOCKS = ((BLOCK_SIZE - 8) / 2) - 5;
 const int MAX_FILES = 20; //28;
 const int MAX_FILE_SIZE	= (MAX_BLOCKS * BLOCK_SIZE);
 const int ROOT_DIR = 1;
@@ -43,7 +43,11 @@ struct Bitmaps {
 struct Dir_Inode {
 	unsigned int magic;		
 	unsigned int num_entries;	
-	long int parent_id; //It's easy to assign address with long int		
+	
+	int parent_id;
+	int dump[9]; //to fix the size of 4096, no meaning here
+	time_t timer;
+	
 	struct {
 		char name[MAX_FNAME_SIZE];	
 		short block_num;		
@@ -53,7 +57,8 @@ struct Dir_Inode {
 // File Inode
 struct File_Inode {
 	unsigned int magic;		
-	unsigned int size;		
+	unsigned int size;
+	time_t timer;
 	short blocks[MAX_BLOCKS];	
 	short link_count;	
 };
