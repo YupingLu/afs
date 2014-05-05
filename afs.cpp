@@ -7,7 +7,6 @@ structure. It support basic shell commands. These commands include mkfs, open,
 read, write, seek, close, mkdir, rmdir, cd, link, unlink, stat, ls, cat, cp, tree,
 import, export, exit.*/
 
-//Now support mkfs, cd, rmdir, rm, create, mkdir, space, ls, append, and cat. 
 
 #include <unistd.h>
 #include <cstdlib>
@@ -38,6 +37,7 @@ import, export, exit.*/
 #include "shell/stat.cpp"
 #include "shell/cp.cpp"
 #include "shell/tree.cpp"
+#include "shell/import.cpp"
 
 using namespace std;
 
@@ -223,6 +223,9 @@ int main()
 		
 		else if (strcmp(command.cmd_name, "cp") == 0) 
 			cp(current_block, command, current_dir, fd);
+		
+		else if (strcmp(command.cmd_name, "import") == 0) 
+			import(current_block, command, current_dir, fd);
 
 		else if (strcmp(command.cmd_name, "write") == 0) 
 			write(current_block, command, fd, gfd, flag);
@@ -343,7 +346,8 @@ bool PartitionCommand(char *cmd_string, struct Cmd_Set &command)
 		strcmp(command.cmd_name, "link") == 0 ||
 		strcmp(command.cmd_name, "read") == 0 ||
 		strcmp(command.cmd_name, "seek") == 0 ||
-		strcmp(command.cmd_name, "cp") == 0)
+		strcmp(command.cmd_name, "cp") == 0 ||
+		strcmp(command.cmd_name, "import") == 0)
 	{
 		if (numtokens != 3) {
 			cerr << "Invalid command line: " << command.cmd_name;
