@@ -38,6 +38,7 @@ import, export, exit.*/
 #include "shell/cp.cpp"
 #include "shell/tree.cpp"
 #include "shell/import.cpp"
+#include "shell/export.cpp"
 
 using namespace std;
 
@@ -122,7 +123,7 @@ short AddNewBlock(int fd)
 	}
 
 	// disk is full
-	return 0;
+	return -1;
 }
 
 // Free Block
@@ -226,6 +227,9 @@ int main()
 		
 		else if (strcmp(command.cmd_name, "import") == 0) 
 			import(current_block, command, current_dir, fd);
+		
+		else if (strcmp(command.cmd_name, "export") == 0) 
+			output(current_block, command, current_dir, fd);
 
 		else if (strcmp(command.cmd_name, "write") == 0) 
 			write(current_block, command, fd, gfd, flag);
@@ -347,7 +351,8 @@ bool PartitionCommand(char *cmd_string, struct Cmd_Set &command)
 		strcmp(command.cmd_name, "read") == 0 ||
 		strcmp(command.cmd_name, "seek") == 0 ||
 		strcmp(command.cmd_name, "cp") == 0 ||
-		strcmp(command.cmd_name, "import") == 0)
+		strcmp(command.cmd_name, "import") == 0 ||
+		strcmp(command.cmd_name, "export") == 0)
 	{
 		if (numtokens != 3) {
 			cerr << "Invalid command line: " << command.cmd_name;

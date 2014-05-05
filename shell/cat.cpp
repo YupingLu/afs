@@ -47,14 +47,6 @@ void cat(Dir_Inode current_block, Cmd_Set command, int fd){
 						else
 							for(int k = 0; k < datasize; k++)
 								cout << tempD.data[k];
-						
-						
-						/*if(dataSize > BLOCK_SIZE)
-							for(int k = 0; k < BLOCK_SIZE; k++)
-								cout << tempD.data[k];
-						else
-							for(int k = 0; k < strlen(tempD.data); k++)
-								cout << tempD.data[k];*/
 					}
 				}
 			}
