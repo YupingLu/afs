@@ -69,6 +69,7 @@ void write(Dir_Inode current_block, Cmd_Set command, int fd, int &gfd, int flag)
 					start = false;
 
 				}
+				cout << "Write success!" << endl;
 						
 			}
 			WriteDisk(fd, gfd, (void*)&tempFile);

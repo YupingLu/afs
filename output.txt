@@ -1,0 +1,517 @@
+AFS> Disk formated. 
+AFS> Directory dir1 is created.
+AFS> Directory dir2 is created.
+AFS> Directory dir1/subdir1 is created.
+AFS> Directory dir1/subdir2 is created.
+AFS> Directory dir1/subdir3 is created.
+AFS> Directory dir1/subdir4 is created.
+AFS> .
+---dir1 dir Mon May  5 19:59:27 2014
+------subdir1 dir Mon May  5 19:59:27 2014
+------subdir2 dir Mon May  5 19:59:27 2014
+------subdir3 dir Mon May  5 19:59:27 2014
+------subdir4 dir Mon May  5 19:59:27 2014
+---dir2 dir Mon May  5 19:59:27 2014
+AFS> Directory dir2 deleted.
+AFS> Name  Block_Id   Type   Bytes  NumBlocks(Full Blocks)  LinkCount   Date
+dir1     2      dir                            Mon May  5 19:59:27 2014
+
+AFS> Directory dir1 entered.
+AFS> Name  Block_Id   Type   Bytes  NumBlocks(Full Blocks)  LinkCount   Date
+subdir1     4      dir                            Mon May  5 19:59:27 2014
+subdir2     5      dir                            Mon May  5 19:59:27 2014
+subdir3     6      dir                            Mon May  5 19:59:27 2014
+subdir4     7      dir                            Mon May  5 19:59:27 2014
+
+AFS> File file1.txt is now created. 
+fd is 3
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> Write success!
+AFS> file closed!
+AFS> fd is 3
+AFS> The content is: 
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4
+AFS> file closed!
+AFS> fd is 3
+AFS> The content is: 
+"This
+AFS> The new offset is 5
+AFS> The content is: 
+ is f
+AFS> file closed!
+AFS> Name  Block_Id   Type   Bytes  NumBlocks(Full Blocks)  LinkCount   Date
+file1.txt     3      file      2160      1      1      Mon May  5 19:59:27 2014
+
+AFS> The file file1.txt holds: 
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+
+AFS> File file2.txt is now copied. 
+AFS> File filelink is now created. 
+AFS> The file file1.txt holds: 
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+"This is file1\n"
+"This is file2\n"
+"This is file3\n"
+"This is file4\n"
+
+AFS> Name  Block_Id   Type   Bytes  NumBlocks(Full Blocks)  LinkCount   Date
+subdir1     4      dir                            Mon May  5 19:59:27 2014
+subdir2     5      dir                            Mon May  5 19:59:27 2014
+subdir3     6      dir                            Mon May  5 19:59:27 2014
+subdir4     7      dir                            Mon May  5 19:59:27 2014
+filelink     11      file      2160      1      2      Mon May  5 19:59:27 2014
+file2.txt     9      file      2160      1      1      Mon May  5 19:59:27 2014
+file1.txt     3      file      2160      1      2      Mon May  5 19:59:27 2014
+
+AFS> File filelink is unlinked. 
+AFS> Name  Block_Id   Type   Bytes  NumBlocks(Full Blocks)  LinkCount   Date
+subdir1     4      dir                            Mon May  5 19:59:27 2014
+subdir2     5      dir                            Mon May  5 19:59:27 2014
+subdir3     6      dir                            Mon May  5 19:59:27 2014
+subdir4     7      dir                            Mon May  5 19:59:27 2014
+filelink     11      file      2160      1      1      Mon May  5 19:59:27 2014
+file2.txt     9      file      2160      1      1      Mon May  5 19:59:27 2014
+file1.txt     3      file      2160      1      2      Mon May  5 19:59:27 2014
+
+AFS> File sample.txt is now copied. 
+AFS> The file sample.txt holds: 
+THE ROAD NOT TAKEN - Harry Turtledove
+=====================================
+
+Captain Togram was using the chamberpot when the Indomitable broke out of hyperdrive. As happened all too often, nausea surged through the Roxolan officer. He raised the pot and was abruptly sick into it.
+ 
+When the spasm was done, he set the thundermug down and wiped his streaming eyes with the soft, gray-brown fur of his forearm. "The gods curse it!" he burst out. "Why don't the shipmasters warn us when they do that?" Several of his troopers echoed him more pungently.
+ 
+At that moment, a runner appeared in the doorway. "We're back in normal space," the youth squeaked, before dashing on to the next chamber. Jeers and oaths followed him: "No shit!" "Thanks for the news!" "Tell the steerers -- they might not have got the word!"
+
+AFS> Disk formated. 
+AFS> Directory dir1 is created.
+AFS> Directory dir2 is created.
+AFS> Directory dir3 is created.
+AFS> Directory dir4 is created.
+AFS> Directory dir5 is created.
+AFS> Directory dir6 is created.
+AFS> Directory dir7 is created.
+AFS> Directory dir8 is created.
+AFS> Directory dir9 is created.
+AFS> Directory dir10 is created.
+AFS> Directory dir11 is created.
+AFS> Directory dir12 is created.
+AFS> Directory dir13 is created.
+AFS> Directory dir14 is created.
+AFS> Directory 1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890 is created.
+AFS> Directory foo is created.
+AFS> Directory foo entered.
+AFS> Directory bar is created.
+AFS> Directory bar entered.
+AFS> Directory bar1 is created.
+AFS> Directory bar1 entered.
+AFS> Directory bar2 is created.
+AFS> Directory bar2 entered.
+AFS> Directory bar3 is created.
+AFS> Directory bar3 entered.
+AFS> Directory bar4 is created.
+AFS> Directory bar4 entered.
+AFS> Directory bar5 is created.
+AFS> Directory bar5 entered.
+AFS> Directory bar6 is created.
+AFS> Directory bar6 entered.
+AFS> Directory bar7 is created.
+AFS> Directory bar7 entered.
+AFS> Directory bar8 is created.
+AFS> Directory bar8 entered.
+AFS> Directory bar9 is created.
+AFS> Directory bar9 entered.
+AFS> Directory bar10 is created.
+AFS> Directory bar10 entered.
+AFS> Directory bar11 is created.
+AFS> Directory bar11 entered.
+AFS> Directory bar12 is created.
+AFS> Directory bar12 entered.
+AFS> Directory bar13 is created.
+AFS> Directory bar13 entered.
+AFS> Directory bar14 is created.
+AFS> Directory bar14 entered.
+AFS> Directory bar15 is created.
+AFS> Directory bar15 entered.
+AFS> .
+AFS> 

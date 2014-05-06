@@ -30,6 +30,9 @@ Dir_Inode NewDir(){
 	Dir_Inode temp_block;
 	temp_block.magic = DIR_MAGIC_NUM;
 	temp_block.num_entries = 0;
+	for (int i = 0; i < MAX_FILES; i++) {
+		temp_block.dir_entries[i].block_num = 0;
+	}
 
 	return temp_block;
 }

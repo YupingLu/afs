@@ -15,6 +15,7 @@ void close(Cmd_Set command, int fd, int &gfd, int &flag, int &offset){
 		gfd = fd;
 		flag = 0;
 		offset = 0;
+		cout << "file closed!" <<endl;
 	}
 
 }
