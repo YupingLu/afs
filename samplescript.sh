@@ -146,6 +146,7 @@ cp file1.txt file2.txt
 link file1.txt filelink
 cat file1.txt
 ls
+export filelink export.txt
 unlink filelink 
 ls
 import sample.txt sample.txt
@@ -200,5 +201,7 @@ mkdir bar14
 cd bar14
 mkdir bar15
 cd bar15
+tree
+home
 tree
 exit

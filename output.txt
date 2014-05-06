@@ -6,22 +6,22 @@ AFS> Directory dir1/subdir2 is created.
 AFS> Directory dir1/subdir3 is created.
 AFS> Directory dir1/subdir4 is created.
 AFS> .
----dir1 dir Tue May  6 13:55:28 2014
-------subdir1 dir Tue May  6 13:55:28 2014
-------subdir2 dir Tue May  6 13:55:28 2014
-------subdir3 dir Tue May  6 13:55:28 2014
-------subdir4 dir Tue May  6 13:55:28 2014
----dir2 dir Tue May  6 13:55:28 2014
+---dir1 dir Tue May  6 14:02:15 2014
+------subdir1 dir Tue May  6 14:02:15 2014
+------subdir2 dir Tue May  6 14:02:15 2014
+------subdir3 dir Tue May  6 14:02:15 2014
+------subdir4 dir Tue May  6 14:02:15 2014
+---dir2 dir Tue May  6 14:02:15 2014
 AFS> Directory dir2 deleted.
 AFS> Name  Block_Id   Type   Bytes  NumBlocks(Full Blocks)  LinkCount   Date
-dir1     2      dir                            Tue May  6 13:55:28 2014
+dir1     2      dir                            Tue May  6 14:02:15 2014
 
 AFS> Directory dir1 entered.
 AFS> Name  Block_Id   Type   Bytes  NumBlocks(Full Blocks)  LinkCount   Date
-subdir1     4      dir                            Tue May  6 13:55:28 2014
-subdir2     5      dir                            Tue May  6 13:55:28 2014
-subdir3     6      dir                            Tue May  6 13:55:28 2014
-subdir4     7      dir                            Tue May  6 13:55:28 2014
+subdir1     4      dir                            Tue May  6 14:02:15 2014
+subdir2     5      dir                            Tue May  6 14:02:15 2014
+subdir3     6      dir                            Tue May  6 14:02:15 2014
+subdir4     7      dir                            Tue May  6 14:02:15 2014
 
 AFS> File file1.txt is now created. 
 fd is 3
@@ -185,7 +185,7 @@ AFS> The content is:
  is f
 AFS> file closed!
 AFS> Name  Block_Id   Type   Bytes  NumBlocks(Full Blocks)  LinkCount   Date
-file1.txt     3      file      2160      1      1      Tue May  6 13:55:28 2014
+file1.txt     3      file      2160      1      1      Tue May  6 14:02:15 2014
 
 AFS> The file file1.txt holds: 
 "This is file1\n"
@@ -434,22 +434,23 @@ AFS> The file file1.txt holds:
 "This is file4\n"
 
 AFS> Name  Block_Id   Type   Bytes  NumBlocks(Full Blocks)  LinkCount   Date
-subdir1     4      dir                            Tue May  6 13:55:28 2014
-subdir2     5      dir                            Tue May  6 13:55:28 2014
-subdir3     6      dir                            Tue May  6 13:55:28 2014
-subdir4     7      dir                            Tue May  6 13:55:28 2014
-filelink     11      file      2160      1      2      Tue May  6 13:55:28 2014
-file2.txt     9      file      2160      1      1      Tue May  6 13:55:28 2014
-file1.txt     3      file      2160      1      2      Tue May  6 13:55:28 2014
+subdir1     4      dir                            Tue May  6 14:02:15 2014
+subdir2     5      dir                            Tue May  6 14:02:15 2014
+subdir3     6      dir                            Tue May  6 14:02:15 2014
+subdir4     7      dir                            Tue May  6 14:02:15 2014
+filelink     11      file      2160      1      2      Tue May  6 14:02:15 2014
+file2.txt     9      file      2160      1      1      Tue May  6 14:02:15 2014
+file1.txt     3      file      2160      1      2      Tue May  6 14:02:15 2014
 
+AFS> File export.txt is now exported. 
 AFS> File filelink deleted.
 AFS> Name  Block_Id   Type   Bytes  NumBlocks(Full Blocks)  LinkCount   Date
-subdir1     4      dir                            Tue May  6 13:55:28 2014
-subdir2     5      dir                            Tue May  6 13:55:28 2014
-subdir3     6      dir                            Tue May  6 13:55:28 2014
-subdir4     7      dir                            Tue May  6 13:55:28 2014
-file2.txt     9      file      2160      1      1      Tue May  6 13:55:28 2014
-file1.txt     3      file      2160      1      1      Tue May  6 13:55:28 2014
+subdir1     4      dir                            Tue May  6 14:02:15 2014
+subdir2     5      dir                            Tue May  6 14:02:15 2014
+subdir3     6      dir                            Tue May  6 14:02:15 2014
+subdir4     7      dir                            Tue May  6 14:02:15 2014
+file2.txt     9      file      2160      1      1      Tue May  6 14:02:15 2014
+file1.txt     3      file      2160      1      1      Tue May  6 14:02:15 2014
 
 AFS> File sample.txt is now copied. 
 AFS> The file sample.txt holds: 
@@ -513,4 +514,38 @@ AFS> Directory bar14 entered.
 AFS> Directory bar15 is created.
 AFS> Directory bar15 entered.
 AFS> .
+AFS> Home directory entered. 
+AFS> .
+---dir1 dir Tue May  6 14:02:15 2014
+---dir2 dir Tue May  6 14:02:15 2014
+---dir3 dir Tue May  6 14:02:15 2014
+---dir4 dir Tue May  6 14:02:15 2014
+---dir5 dir Tue May  6 14:02:15 2014
+---dir6 dir Tue May  6 14:02:15 2014
+---dir7 dir Tue May  6 14:02:15 2014
+---dir8 dir Tue May  6 14:02:15 2014
+---dir9 dir Tue May  6 14:02:15 2014
+---dir10 dir Tue May  6 14:02:15 2014
+---dir11 dir Tue May  6 14:02:15 2014
+---dir12 dir Tue May  6 14:02:15 2014
+---dir13 dir Tue May  6 14:02:15 2014
+---dir14 dir Tue May  6 14:02:15 2014
+---1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890 dir Tue May  6 14:02:15 2014
+---foo dir Tue May  6 14:02:15 2014
+------bar dir Tue May  6 14:02:15 2014
+---------bar1 dir Tue May  6 14:02:15 2014
+------------bar2 dir Tue May  6 14:02:15 2014
+---------------bar3 dir Tue May  6 14:02:15 2014
+------------------bar4 dir Tue May  6 14:02:15 2014
+---------------------bar5 dir Tue May  6 14:02:15 2014
+------------------------bar6 dir Tue May  6 14:02:15 2014
+---------------------------bar7 dir Tue May  6 14:02:15 2014
+------------------------------bar8 dir Tue May  6 14:02:15 2014
+---------------------------------bar9 dir Tue May  6 14:02:15 2014
+------------------------------------bar10 dir Tue May  6 14:02:15 2014
+---------------------------------------bar11 dir Tue May  6 14:02:15 2014
+------------------------------------------bar12 dir Tue May  6 14:02:15 2014
+---------------------------------------------bar13 dir Tue May  6 14:02:15 2014
+------------------------------------------------bar14 dir Tue May  6 14:02:15 2014
+---------------------------------------------------bar15 dir Tue May  6 14:02:15 2014
 AFS> 
