@@ -68,7 +68,7 @@ void link(Dir_Inode current_block, Cmd_Set command, short current_dir, int fd){
 			WriteDisk(fd, newBlockNum, (void *) &destFile);
 			WriteDisk(fd, sourceBlockNum, (void *) &sourceFile);
 			
-			cout << "File " << command.data << " is now created. " << endl;
+			cout << "File " << command.data << " is now linked. " << endl;
 		}
 	}
 	else if(!there2 && !isSpace)

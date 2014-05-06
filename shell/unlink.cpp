@@ -32,7 +32,7 @@ void unlink(Dir_Inode current_block, Cmd_Set command, short current_dir, int fd)
 		cout << "File " << command.file_name << " does not exist. " << endl;
 	}
 	else{
-		if(sourceFile.link_count == 1){
+		if(sourceFile.link_count == 2){
 			//rm(current_block, command, sourceBlockNum, fd);
 			//ReadDisk(fd, sourceBlockNum, (void*) &tempFile);
 			for(int j = 0; j < ((sourceFile.size/BLOCK_SIZE)+FILE_BLOCK); j++)
@@ -55,7 +55,7 @@ void unlink(Dir_Inode current_block, Cmd_Set command, short current_dir, int fd)
 			WriteDisk(fd, current_dir, (void *) &current_block);
 			cout << "File " << command.file_name << " deleted." << endl;
 		}
-		else if(sourceFile.link_count > 1){
+		else if(sourceFile.link_count > 2){
 			sourceFile.link_count--;
 			WriteDisk(fd, sourceBlockNum, (void *) &sourceFile);
 			cout << "File " << command.file_name << " is unlinked. " << endl;

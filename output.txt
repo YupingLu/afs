@@ -6,22 +6,22 @@ AFS> Directory dir1/subdir2 is created.
 AFS> Directory dir1/subdir3 is created.
 AFS> Directory dir1/subdir4 is created.
 AFS> .
----dir1 dir Mon May  5 19:59:27 2014
-------subdir1 dir Mon May  5 19:59:27 2014
-------subdir2 dir Mon May  5 19:59:27 2014
-------subdir3 dir Mon May  5 19:59:27 2014
-------subdir4 dir Mon May  5 19:59:27 2014
----dir2 dir Mon May  5 19:59:27 2014
+---dir1 dir Mon May  5 21:50:49 2014
+------subdir1 dir Mon May  5 21:50:49 2014
+------subdir2 dir Mon May  5 21:50:49 2014
+------subdir3 dir Mon May  5 21:50:49 2014
+------subdir4 dir Mon May  5 21:50:49 2014
+---dir2 dir Mon May  5 21:50:49 2014
 AFS> Directory dir2 deleted.
 AFS> Name  Block_Id   Type   Bytes  NumBlocks(Full Blocks)  LinkCount   Date
-dir1     2      dir                            Mon May  5 19:59:27 2014
+dir1     2      dir                            Mon May  5 21:50:49 2014
 
 AFS> Directory dir1 entered.
 AFS> Name  Block_Id   Type   Bytes  NumBlocks(Full Blocks)  LinkCount   Date
-subdir1     4      dir                            Mon May  5 19:59:27 2014
-subdir2     5      dir                            Mon May  5 19:59:27 2014
-subdir3     6      dir                            Mon May  5 19:59:27 2014
-subdir4     7      dir                            Mon May  5 19:59:27 2014
+subdir1     4      dir                            Mon May  5 21:50:49 2014
+subdir2     5      dir                            Mon May  5 21:50:49 2014
+subdir3     6      dir                            Mon May  5 21:50:49 2014
+subdir4     7      dir                            Mon May  5 21:50:49 2014
 
 AFS> File file1.txt is now created. 
 fd is 3
@@ -185,7 +185,7 @@ AFS> The content is:
  is f
 AFS> file closed!
 AFS> Name  Block_Id   Type   Bytes  NumBlocks(Full Blocks)  LinkCount   Date
-file1.txt     3      file      2160      1      1      Mon May  5 19:59:27 2014
+file1.txt     3      file      2160      1      1      Mon May  5 21:50:49 2014
 
 AFS> The file file1.txt holds: 
 "This is file1\n"
@@ -310,7 +310,7 @@ AFS> The file file1.txt holds:
 "This is file4\n"
 
 AFS> File file2.txt is now copied. 
-AFS> File filelink is now created. 
+AFS> File filelink is now linked. 
 AFS> The file file1.txt holds: 
 "This is file1\n"
 "This is file2\n"
@@ -434,23 +434,22 @@ AFS> The file file1.txt holds:
 "This is file4\n"
 
 AFS> Name  Block_Id   Type   Bytes  NumBlocks(Full Blocks)  LinkCount   Date
-subdir1     4      dir                            Mon May  5 19:59:27 2014
-subdir2     5      dir                            Mon May  5 19:59:27 2014
-subdir3     6      dir                            Mon May  5 19:59:27 2014
-subdir4     7      dir                            Mon May  5 19:59:27 2014
-filelink     11      file      2160      1      2      Mon May  5 19:59:27 2014
-file2.txt     9      file      2160      1      1      Mon May  5 19:59:27 2014
-file1.txt     3      file      2160      1      2      Mon May  5 19:59:27 2014
+subdir1     4      dir                            Mon May  5 21:50:49 2014
+subdir2     5      dir                            Mon May  5 21:50:49 2014
+subdir3     6      dir                            Mon May  5 21:50:49 2014
+subdir4     7      dir                            Mon May  5 21:50:49 2014
+filelink     11      file      2160      1      2      Mon May  5 21:50:49 2014
+file2.txt     9      file      2160      1      1      Mon May  5 21:50:49 2014
+file1.txt     3      file      2160      1      2      Mon May  5 21:50:49 2014
 
-AFS> File filelink is unlinked. 
+AFS> File filelink deleted.
 AFS> Name  Block_Id   Type   Bytes  NumBlocks(Full Blocks)  LinkCount   Date
-subdir1     4      dir                            Mon May  5 19:59:27 2014
-subdir2     5      dir                            Mon May  5 19:59:27 2014
-subdir3     6      dir                            Mon May  5 19:59:27 2014
-subdir4     7      dir                            Mon May  5 19:59:27 2014
-filelink     11      file      2160      1      1      Mon May  5 19:59:27 2014
-file2.txt     9      file      2160      1      1      Mon May  5 19:59:27 2014
-file1.txt     3      file      2160      1      2      Mon May  5 19:59:27 2014
+subdir1     4      dir                            Mon May  5 21:50:49 2014
+subdir2     5      dir                            Mon May  5 21:50:49 2014
+subdir3     6      dir                            Mon May  5 21:50:49 2014
+subdir4     7      dir                            Mon May  5 21:50:49 2014
+file2.txt     9      file      2160      1      1      Mon May  5 21:50:49 2014
+file1.txt     3      file      2160      1      2      Mon May  5 21:50:49 2014
 
 AFS> File sample.txt is now copied. 
 AFS> The file sample.txt holds: 
