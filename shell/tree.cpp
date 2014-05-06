@@ -32,7 +32,7 @@ void tree(Dir_Inode current_block, Cmd_Set command, int fd, int count){
 			ReadDisk(fd, current_block.dir_entries[i].block_num, (void *) &tempBlock1);
 			//numBlocks = ((tempBlock1.size/BLOCK_SIZE))+FILE_BLOCK;
 			cout << string(count*3, star);
-			cout << current_block.dir_entries[i].name << " file " << ctime(&tempBlock1.timer);
+			cout << current_block.dir_entries[i].name << " file " << tempBlock1.size << " " << ctime(&tempBlock1.timer);
 			
 		}
 	}
