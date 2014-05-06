@@ -59,6 +59,10 @@ void link(Dir_Inode current_block, Cmd_Set command, short current_dir, int fd){
 			destFile.magic = sourceFile.magic;
 			destFile.size = sourceFile.size;
 			memcpy(destFile.blocks, sourceFile.blocks, MAX_BLOCKS);
+			
+			destFile.links[destFile.link_count-1] = sourceBlockNum;
+			sourceFile.links[sourceFile.link_count-1] = newBlockNum;
+			
 			destFile.link_count++;
 			sourceFile.link_count++;
 			time(&destFile.timer);

@@ -21,6 +21,24 @@ void rm(Dir_Inode current_block, Cmd_Set command, short current_dir, int fd){
 		{
 			if(!IsDir(current_block.dir_entries[i].block_num, fd)){
 				ReadDisk(fd, current_block.dir_entries[i].block_num, (void*) &tempFile);
+				
+				for(int w=0; w < tempFile.link_count-1; w++)
+				{
+					tempFile2 = GetInode(tempFile.links[w], fd);
+					for(int s=0; s<tempFile2.link_count-1; s++)
+					{
+						if(tempFile2.links[s] == current_block.dir_entries[i].block_num)
+						{
+							tempFile2.links[s] = tempFile2.links[tempFile2.link_count-1];
+							tempFile2.links[tempFile2.link_count-1] = -1;
+						}
+					}
+					if(tempFile2.link_count > 1)
+						tempFile2.link_count--;
+
+					WriteDisk(fd, tempFile.links[w], (void *) &tempFile2);
+				}
+				
 				for(int j = 0; j < ((tempFile.size/BLOCK_SIZE)+FILE_BLOCK); j++)
 				{
 					if(tempFile.blocks[j] != 0){

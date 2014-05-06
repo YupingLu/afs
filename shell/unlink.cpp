@@ -9,6 +9,7 @@ using namespace std;
 
 void unlink(Dir_Inode current_block, Cmd_Set command, short current_dir, int fd){
 	File_Inode sourceFile;
+	File_Inode tempFile;
 	bool there = false;
 	int sourceBlockNum;
 
@@ -32,7 +33,23 @@ void unlink(Dir_Inode current_block, Cmd_Set command, short current_dir, int fd)
 		cout << "File " << command.file_name << " does not exist. " << endl;
 	}
 	else{
-		if(sourceFile.link_count == 2){
+		if(sourceFile.link_count == 2 || sourceFile.link_count == 1){
+			for(int w=0; w < sourceFile.link_count-1; w++)
+			{
+				tempFile = GetInode(sourceFile.links[w], fd);
+				for(int s=0; s<tempFile.link_count-1; s++)
+				{
+					if(tempFile.links[s] == sourceBlockNum)
+					{
+						tempFile.links[s] = tempFile.links[tempFile.link_count-1];
+						tempFile.links[tempFile.link_count-1] = -1;
+					}
+				}
+				if(tempFile.link_count > 1)
+					tempFile.link_count--;
+				WriteDisk(fd, sourceFile.links[w], (void *) &tempFile);
+			}
+		
 			//rm(current_block, command, sourceBlockNum, fd);
 			//ReadDisk(fd, sourceBlockNum, (void*) &tempFile);
 			for(int j = 0; j < ((sourceFile.size/BLOCK_SIZE)+FILE_BLOCK); j++)
@@ -56,6 +73,22 @@ void unlink(Dir_Inode current_block, Cmd_Set command, short current_dir, int fd)
 			cout << "File " << command.file_name << " deleted." << endl;
 		}
 		else if(sourceFile.link_count > 2){
+			for(int w=0; w < sourceFile.link_count-1; w++)
+			{
+				tempFile = GetInode(sourceFile.links[w], fd);
+				for(int s=0; s<tempFile.link_count-1; s++)
+				{
+					if(tempFile.links[s] == sourceBlockNum)
+					{
+						tempFile.links[s] = tempFile.links[tempFile.link_count-1];
+						tempFile.links[tempFile.link_count-1] = -1;
+					}
+				}
+				if(tempFile.link_count > 1)
+					tempFile.link_count--;
+				WriteDisk(fd, sourceFile.links[w], (void *) &tempFile);
+			}
+			
 			sourceFile.link_count--;
 			WriteDisk(fd, sourceBlockNum, (void *) &sourceFile);
 			cout << "File " << command.file_name << " is unlinked. " << endl;

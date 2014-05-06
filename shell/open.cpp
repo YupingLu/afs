@@ -92,6 +92,8 @@ File_Inode Create(){
 	tempINode.timer = 0;
 	for(int i = 0; i < MAX_BLOCKS; i++)
 		tempINode.blocks[i] = 0;
+	for(int i = 0; i < 3; i++)
+		tempINode.links[i] = -1;
 
 	return tempINode;
 }

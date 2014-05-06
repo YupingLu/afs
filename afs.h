@@ -17,7 +17,7 @@ const unsigned int DIR_MAGIC_NUM = 0xFFFFFFFF;
 const unsigned int INODE_MAGIC_NUM = 0xFFFFFFFE;
 const int MAX_CMD_NUM = 500;
 const int MAX_FNAME_SIZE = 200; //144;
-const int MAX_BLOCKS = ((BLOCK_SIZE - 8) / 2) - 5;
+const int MAX_BLOCKS = ((BLOCK_SIZE - 8) / 2) - 15;
 const int MAX_FILES = 20; //28;
 const int MAX_FILE_SIZE	= (MAX_BLOCKS * BLOCK_SIZE);
 const int ROOT_DIR = 1;
@@ -60,7 +60,8 @@ struct File_Inode {
 	unsigned int size;
 	time_t timer;
 	short blocks[MAX_BLOCKS];	
-	short link_count;	
+	short link_count;
+	short links[10];	 //right now only support 3 links each file
 };
 
 // Data region
